@@ -1,0 +1,73 @@
+:root {
+	--main-bg-color: #000;
+	--box-bg-color: #fff;
+	--ribbon-span-bg: #8e44ad;
+	--ribbon-border: #7b1ba2;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--main-bg-color);
+}
+
+.box {
+	width: 400px;
+	height: 400px;
+	background: var(--box-bg-color);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.ribbon {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: absolute;
+}
+
+.ribbon span {
+	position: absolute;
+	width: 225px;
+	padding: 15px 0;
+	background: var(--ribbon-span-bg);
+	display: block;
+	text-align: center;
+	color: #fff;
+}
+
+.ribbon::after, .ribbon::before {
+	content: '';
+	border: 5px solid var(--ribbon-border);
+	position: absolute;
+}
+
+.ribbon-top-right {
+	top: -10px;
+	right: -10px;
+}
+
+.ribbon-top-right span {
+	left: -25px;
+	top: 30px;
+	transform: rotate(45deg);
+}
+
+.ribbon-top-right::before, .ribbon-top-right::after {
+	border-top-color: transparent;
+	border-right-color: transparent;
+}
+
+.ribbon-top-right::after {
+	bottom: 0;
+	right: 0;
+}
+
+.ribbon-top-right::before {
+	top: 0;
+	left: 0;
+}
